@@ -23,6 +23,12 @@ if (${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_BINARY_DIR})
     )
 endif()
 
+include("cmake/HunterGate.cmake")
+HunterGate(
+    URL "https://github.com/ruslo/hunter/archive/v0.14.29.tar.gz"
+    SHA1 "9c29c30fff99b7c1479b2e9d4926dcc3f8d364e0"
+)
+
 set(CMAKE_MODULE_PATH "${CMAKE_MODULE_PATH};${CMAKE_SOURCE_DIR}/cmake")
 
 set(EXECUTABLE_OUTPUT_PATH "${CMAKE_BINARY_DIR}/bin")
@@ -45,9 +51,13 @@ set(VERSION_MINOR 73)
 set(VERSION_PLAIN ${VERSION_MAJOR}.${VERSION_MINOR})
 
 find_package(GIF)
+hunter_add_package(JPEG)
 find_package(JPEG)
+hunter_add_package(PNG)
 find_package(PNG)
+hunter_add_package(TIFF)
 find_package(TIFF)
+hunter_add_package(ZLIB)
 find_package(ZLIB)
 
 find_package(PkgConfig)
