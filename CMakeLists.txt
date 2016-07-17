@@ -124,6 +124,14 @@ configure_file(
     ${CMAKE_SOURCE_DIR}/cmake/templates/LeptonicaConfig.cmake.in
     ${CMAKE_BINARY_DIR}/LeptonicaConfig.cmake @ONLY)
 
+set(config_install_dir "lib/cmake/Leptonica")
+install(
+    FILES
+    "${CMAKE_BINARY_DIR}/LeptonicaConfig.cmake"
+    "${CMAKE_BINARY_DIR}/LeptonicaConfig-version.cmake"
+    DESTINATION "${config_install_dir}"
+)
+
 ###############################################################################
 #
 # build

@@ -61,4 +61,13 @@ else()
 endif()
 
 ################################################################################
+install(
+    TARGETS leptonica
+    LIBRARY DESTINATION "lib"
+    ARCHIVE DESTINATION "lib"
+)
 
+install(
+  FILES "${CMAKE_BINARY_DIR}/LeptonicaTargets.cmake"
+  DESTINATION "${config_install_dir}"
+)
