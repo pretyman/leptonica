@@ -71,3 +71,10 @@ install(
   FILES "${CMAKE_BINARY_DIR}/LeptonicaTargets.cmake"
   DESTINATION "${config_install_dir}"
 )
+
+install(
+      FILES
+      "allheaders.h"
+      DESTINATION
+      "include"
+)
