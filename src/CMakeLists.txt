@@ -61,10 +61,12 @@ else()
 endif()
 
 ################################################################################
+set(include_install_dir "include")
 install(
     TARGETS leptonica
     LIBRARY DESTINATION "lib"
     ARCHIVE DESTINATION "lib"
+    INCLUDES DESTINATION "${include_install_dir}"
 )
 
 install(
@@ -76,5 +78,5 @@ install(
       FILES
       "allheaders.h"
       DESTINATION
-      "include"
+      "${include_install_dir}"
 )
